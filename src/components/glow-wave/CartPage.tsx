@@ -118,7 +118,7 @@ export default function CartPage() {
                     {/* Quantity & Remove */}
                     <div className="flex flex-col items-end gap-3 flex-shrink-0">
                       <button
-                        onClick={() => removeFromCart(`${item.id}-${item.size}`)}
+                        onClick={() => removeFromCart(item.id, item.size)}
                         className="p-2 rounded-lg cursor-pointer transition-colors duration-200 hover:bg-red-50"
                         style={{ color: '#EF4444' }}
                       >
@@ -126,7 +126,7 @@ export default function CartPage() {
                       </button>
                       <div className="flex items-center gap-2">
                         <button
-                          onClick={() => updateQuantity(`${item.id}-${item.size}`, item.quantity - 1)}
+                          onClick={() => updateQuantity(item.id, item.size, item.quantity - 1)}
                           className="qty-btn cursor-pointer"
                         >
                           <Minus size={12} />
@@ -141,7 +141,7 @@ export default function CartPage() {
                           {item.quantity}
                         </span>
                         <button
-                          onClick={() => updateQuantity(`${item.id}-${item.size}`, item.quantity + 1)}
+                          onClick={() => updateQuantity(item.id, item.size, item.quantity + 1)}
                           className="qty-btn cursor-pointer"
                         >
                           <Plus size={12} />

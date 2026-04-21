@@ -116,9 +116,9 @@ export default function Footer() {
             <div className="space-y-3">
               {[
                 { label: t('footer_returns'), page: 'returns' as const },
-                { label: t('footer_faq'), page: 'contact' as const },
-                { label: t('footer_shipping'), page: 'contact' as const },
-                { label: t('footer_privacy'), page: 'contact' as const },
+                { label: t('footer_faq'), page: 'faq' as const },
+                { label: t('footer_shipping'), page: 'shipping' as const },
+                { label: t('footer_privacy'), page: 'privacy' as const },
               ].map((link, i) => (
                 <button
                   key={i}

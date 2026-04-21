@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { Lang, translations, TranslationKey } from './i18n';
 
-export type PageType = 'home' | 'product' | 'cart' | 'checkout' | 'about' | 'contact' | 'returns' | 'success';
+export type PageType = 'home' | 'product' | 'cart' | 'checkout' | 'about' | 'contact' | 'returns' | 'faq' | 'shipping' | 'privacy' | 'success';
 
 export type CartItem = {
   id: string;
@@ -26,8 +26,8 @@ interface StoreState {
   hideSplash: () => void;
   toggleLang: () => void;
   addToCart: (item: Omit<CartItem, 'quantity'>) => void;
-  updateQuantity: (id: string, quantity: number) => void;
-  removeFromCart: (id: string) => void;
+  updateQuantity: (id: string, size: 'small' | 'large', quantity: number) => void;
+  removeFromCart: (id: string, size: 'small' | 'large') => void;
   clearCart: () => void;
   setSelectedSize: (size: 'small' | 'large') => void;
   getCartTotal: () => number;
@@ -79,16 +79,16 @@ export const useStore = create<StoreState>((set, get) => ({
     set({ cart });
   },
 
-  updateQuantity: (id, quantity) => {
+  updateQuantity: (id, size, quantity) => {
     const cart = loadCart().map((item) =>
-      item.id === id ? { ...item, quantity: Math.max(0, quantity) } : item
+      item.id === id && item.size === size ? { ...item, quantity: Math.max(0, quantity) } : item
     ).filter((item) => item.quantity > 0);
     saveCart(cart);
     set({ cart });
   },
 
-  removeFromCart: (id) => {
-    const cart = loadCart().filter((item) => item.id !== id);
+  removeFromCart: (id, size) => {
+    const cart = loadCart().filter((item) => !(item.id === id && item.size === size));
     saveCart(cart);
     set({ cart });
   },

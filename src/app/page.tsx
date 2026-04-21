@@ -12,6 +12,9 @@ import CheckoutPage from '@/components/glow-wave/CheckoutPage';
 import AboutPage from '@/components/glow-wave/AboutPage';
 import ContactPage from '@/components/glow-wave/ContactPage';
 import ReturnsPage from '@/components/glow-wave/ReturnsPage';
+import FAQPage from '@/components/glow-wave/FAQPage';
+import ShippingPage from '@/components/glow-wave/ShippingPage';
+import PrivacyPage from '@/components/glow-wave/PrivacyPage';
 import SuccessPage from '@/components/glow-wave/SuccessPage';
 import Footer from '@/components/glow-wave/Footer';
 
@@ -94,6 +97,12 @@ export default function Home() {
         return <ContactPage />;
       case 'returns':
         return <ReturnsPage />;
+      case 'faq':
+        return <FAQPage />;
+      case 'shipping':
+        return <ShippingPage />;
+      case 'privacy':
+        return <PrivacyPage />;
       case 'success':
         return <SuccessPage />;
       default:
