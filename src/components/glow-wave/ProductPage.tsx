@@ -49,7 +49,7 @@ export default function ProductPage() {
             className="inline-block text-xs font-medium tracking-wider uppercase mb-3 px-4 py-2 rounded-full glass-card"
             style={{
               fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-              color: '#A0785A',
+              color: '#0EA5E9',
             }}
           >
             {t('prod_tag')}
@@ -58,7 +58,7 @@ export default function ProductPage() {
             className="text-3xl md:text-4xl lg:text-5xl font-bold"
             style={{
               fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-              color: '#4A3728',
+              color: '#0F172A',
             }}
           >
             {t('prod_title')}
@@ -116,7 +116,7 @@ export default function ProductPage() {
                 className="text-xl md:text-2xl font-bold mb-4"
                 style={{
                   fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                  color: '#4A3728',
+                  color: '#0F172A',
                 }}
               >
                 {t('prod_desc_title')}
@@ -125,7 +125,7 @@ export default function ProductPage() {
                 className="text-base leading-relaxed"
                 style={{
                   fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                  color: '#6B5B4E',
+                  color: '#475569',
                 }}
               >
                 {t('prod_desc')}
@@ -144,13 +144,13 @@ export default function ProductPage() {
                   key={i}
                   className="benefit-card glass-card rounded-2xl p-4"
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: 'rgba(201, 169, 110, 0.12)' }}>
-                    <b.icon size={20} style={{ color: '#C9A96E' }} />
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: 'rgba(56, 189, 248, 0.12)' }}>
+                    <b.icon size={20} style={{ color: '#38BDF8' }} />
                   </div>
-                  <p className="text-sm font-semibold mb-1" style={{ fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)', color: '#4A3728' }}>
+                  <p className="text-sm font-semibold mb-1" style={{ fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)', color: '#0F172A' }}>
                     {b.title}
                   </p>
-                  <p className="text-xs" style={{ fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)', color: '#8B7355' }}>
+                  <p className="text-xs" style={{ fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)', color: '#64748B' }}>
                     {b.desc}
                   </p>
                 </div>
@@ -163,7 +163,7 @@ export default function ProductPage() {
                 className="text-sm font-semibold mb-4"
                 style={{
                   fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                  color: '#4A3728',
+                  color: '#0F172A',
                 }}
               >
                 {t('prod_size_label')}
@@ -181,7 +181,7 @@ export default function ProductPage() {
                       className="text-base font-semibold mb-1"
                       style={{
                         fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                        color: selectedSize === size ? 'white' : '#4A3728',
+                        color: selectedSize === size ? 'white' : '#0F172A',
                       }}
                     >
                       {size === 'small' ? t('prod_small') : t('prod_large')}
@@ -190,7 +190,7 @@ export default function ProductPage() {
                       className="text-xs mb-2"
                       style={{
                         fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                        color: selectedSize === size ? 'rgba(255,255,255,0.8)' : '#8B7355',
+                        color: selectedSize === size ? 'rgba(255,255,255,0.8)' : '#64748B',
                       }}
                     >
                       {size === 'small' ? t('prod_small_info') : t('prod_large_info')}
@@ -199,7 +199,7 @@ export default function ProductPage() {
                       className="text-lg font-bold"
                       style={{
                         fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                        color: selectedSize === size ? 'white' : '#7A5C42',
+                        color: selectedSize === size ? 'white' : '#0369A1',
                       }}
                     >
                       {prices[size]} {t('sar')}
@@ -217,7 +217,7 @@ export default function ProductPage() {
                     className="text-xs uppercase tracking-wider"
                     style={{
                       fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                      color: '#8B7355',
+                      color: '#64748B',
                     }}
                   >
                     {t('cart_total')}
@@ -226,14 +226,14 @@ export default function ProductPage() {
                     className="text-3xl font-bold"
                     style={{
                       fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                      color: '#4A3728',
+                      color: '#0F172A',
                     }}
                   >
-                    {price} <span className="text-lg font-normal" style={{ color: '#8B7355' }}>{t('sar')}</span>
+                    {price} <span className="text-lg font-normal" style={{ color: '#64748B' }}>{t('sar')}</span>
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs" style={{ color: '#8B7355', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>
+                  <p className="text-xs" style={{ color: '#64748B', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>
                     {count} {lang === 'ar' ? 'حبة' : 'Gummies'}
                   </p>
                 </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useStore } from '@/lib/store';
-import { Instagram, Twitter } from 'lucide-react';
+import { Instagram, Twitter, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   const { lang, t, setPage } = useStore();
@@ -11,8 +11,8 @@ export default function Footer() {
     <footer
       className="relative mt-auto"
       style={{
-        background: 'linear-gradient(180deg, transparent 0%, rgba(160, 120, 90, 0.05) 100%)',
-        borderTop: '1px solid rgba(160, 120, 90, 0.1)',
+        background: 'linear-gradient(180deg, transparent 0%, rgba(14, 165, 233, 0.05) 100%)',
+        borderTop: '1px solid rgba(14, 165, 233, 0.1)',
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -25,7 +25,7 @@ export default function Footer() {
                 className="text-lg font-bold"
                 style={{
                   fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                  color: '#7A5C42',
+                  color: '#0369A1',
                 }}
               >
                 Glow Wave
@@ -35,23 +35,35 @@ export default function Footer() {
               className="text-sm leading-relaxed max-w-sm"
               style={{
                 fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                color: '#8B7355',
+                color: '#64748B',
               }}
             >
               {t('footer_desc')}
             </p>
             <div className="flex gap-3 mt-5">
               <a
-                href="#"
+                href="https://instagram.com/glowwave.sa"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl glass-card flex items-center justify-center transition-all duration-300 hover:shadow-md"
               >
-                <Instagram size={18} style={{ color: '#A0785A' }} />
+                <Instagram size={18} style={{ color: '#0EA5E9' }} />
               </a>
               <a
-                href="#"
+                href="https://twitter.com/glowwave_sa"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl glass-card flex items-center justify-center transition-all duration-300 hover:shadow-md"
               >
-                <Twitter size={18} style={{ color: '#A0785A' }} />
+                <Twitter size={18} style={{ color: '#0EA5E9' }} />
+              </a>
+              <a
+                href="https://wa.me/966553517226"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-xl glass-card flex items-center justify-center transition-all duration-300 hover:shadow-md"
+              >
+                <MessageCircle size={18} style={{ color: '#0EA5E9' }} />
               </a>
             </div>
           </div>
@@ -62,7 +74,7 @@ export default function Footer() {
               className="text-sm font-bold mb-4"
               style={{
                 fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                color: '#4A3728',
+                color: '#0F172A',
               }}
             >
               {t('footer_links')}
@@ -77,10 +89,10 @@ export default function Footer() {
                 <button
                   key={i}
                   onClick={() => setPage(link.page)}
-                  className="block text-sm cursor-pointer transition-colors duration-200 hover:text-[#C9A96E]"
+                  className="block text-sm cursor-pointer transition-colors duration-200 hover:text-[#38BDF8]"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#8B7355',
+                    color: '#64748B',
                     textAlign: isRTL ? 'right' : 'left',
                   }}
                 >
@@ -96,29 +108,30 @@ export default function Footer() {
               className="text-sm font-bold mb-4"
               style={{
                 fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                color: '#4A3728',
+                color: '#0F172A',
               }}
             >
               {t('footer_support')}
             </h4>
             <div className="space-y-3">
               {[
-                t('footer_faq'),
-                t('footer_shipping'),
-                t('footer_returns'),
-                t('footer_privacy'),
+                { label: t('footer_returns'), page: 'returns' as const },
+                { label: t('footer_faq'), page: 'contact' as const },
+                { label: t('footer_shipping'), page: 'contact' as const },
+                { label: t('footer_privacy'), page: 'contact' as const },
               ].map((link, i) => (
-                <span
+                <button
                   key={i}
-                  className="block text-sm transition-colors duration-200 hover:text-[#C9A96E] cursor-pointer"
+                  onClick={() => setPage(link.page)}
+                  className="block text-sm cursor-pointer transition-colors duration-200 hover:text-[#38BDF8]"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#8B7355',
+                    color: '#64748B',
                     textAlign: isRTL ? 'right' : 'left',
                   }}
                 >
-                  {link}
-                </span>
+                  {link.label}
+                </button>
               ))}
             </div>
           </div>
@@ -127,13 +140,13 @@ export default function Footer() {
         {/* Copyright */}
         <div
           className="mt-12 pt-8 text-center"
-          style={{ borderTop: '1px solid rgba(160, 120, 90, 0.1)' }}
+          style={{ borderTop: '1px solid rgba(14, 165, 233, 0.1)' }}
         >
           <p
             className="text-xs"
             style={{
               fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-              color: '#8B7355',
+              color: '#64748B',
             }}
           >
             &copy; {new Date().getFullYear()} Glow Wave. {t('footer_rights')}

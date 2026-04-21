@@ -43,7 +43,7 @@ export default function SuccessPage() {
               animate={{ y: [0, -8, 0], rotate: [0, 15, -15, 0] }}
               transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
             >
-              <Sparkles size={20} style={{ color: '#C9A96E', opacity: 0.6 }} />
+              <Sparkles size={20} style={{ color: '#38BDF8', opacity: 0.6 }} />
             </motion.div>
           ))}
         </motion.div>
@@ -55,7 +55,7 @@ export default function SuccessPage() {
           className="text-2xl md:text-3xl font-bold mb-3"
           style={{
             fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-            color: '#4A3728',
+            color: '#0F172A',
           }}
         >
           {t('success_title')}
@@ -68,7 +68,7 @@ export default function SuccessPage() {
           className="text-sm font-medium mb-4"
           style={{
             fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-            color: '#C9A96E',
+            color: '#38BDF8',
           }}
         >
           {t('success_subtitle')}
@@ -81,7 +81,7 @@ export default function SuccessPage() {
           className="text-sm leading-relaxed mb-8"
           style={{
             fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-            color: '#8B7355',
+            color: '#64748B',
           }}
         >
           {t('success_desc')}

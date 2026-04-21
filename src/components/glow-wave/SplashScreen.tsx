@@ -61,7 +61,7 @@ export default function SplashScreen() {
             className="text-3xl md:text-4xl font-bold tracking-wide"
             style={{
               fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-              color: '#7A5C42',
+              color: '#0369A1',
             }}
           >
             Glow Wave
@@ -77,7 +77,7 @@ export default function SplashScreen() {
             className="mt-3 text-sm md:text-base tracking-widest uppercase"
             style={{
               fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-              color: '#A0785A',
+              color: '#0EA5E9',
               letterSpacing: lang === 'ar' ? '0.1em' : '0.2em',
             }}
           >
@@ -91,7 +91,7 @@ export default function SplashScreen() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
           className="mt-12 w-32 h-0.5 rounded-full overflow-hidden"
-          style={{ background: 'rgba(160, 120, 90, 0.15)' }}
+          style={{ background: 'rgba(14, 165, 233, 0.15)' }}
         >
           <motion.div
             initial={{ width: '0%' }}
@@ -99,7 +99,7 @@ export default function SplashScreen() {
             transition={{ duration: 2.2, ease: 'easeInOut' }}
             className="h-full rounded-full"
             style={{
-              background: 'linear-gradient(90deg, #C9A96E, #A0785A)',
+              background: 'linear-gradient(90deg, #38BDF8, #0EA5E9)',
             }}
           />
         </motion.div>

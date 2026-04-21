@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useStore } from '@/lib/store';
 import { motion } from 'framer-motion';
-import { CreditCard, Truck, ArrowRight, ArrowLeft, ShieldCheck } from 'lucide-react';
+import { CreditCard, Truck, ArrowRight, ArrowLeft, ShieldCheck, Smartphone, Wallet } from 'lucide-react';
 
 export default function CheckoutPage() {
   const { lang, t, cart, getCartTotal, setPage, clearCart } = useStore();
@@ -15,7 +15,7 @@ export default function CheckoutPage() {
     name: '',
     phone: '',
     address: '',
-    payment: 'cod' as 'cod' | 'card',
+    payment: 'cod' as 'cod' | 'visa' | 'apple' | 'tabby' | 'mada',
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -46,7 +46,7 @@ export default function CheckoutPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center"
         >
-          <p style={{ color: '#8B7355', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>
+          <p style={{ color: '#64748B', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>
             {lang === 'ar' ? 'سلتك فارغة' : 'Your cart is empty'}
           </p>
           <button
@@ -79,7 +79,7 @@ export default function CheckoutPage() {
             className="text-3xl md:text-4xl font-bold"
             style={{
               fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-              color: '#4A3728',
+              color: '#0F172A',
             }}
           >
             {t('checkout_title')}
@@ -101,7 +101,7 @@ export default function CheckoutPage() {
                   className="block text-sm font-medium mb-2"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#4A3728',
+                    color: '#0F172A',
                   }}
                 >
                   {t('checkout_name')}
@@ -127,7 +127,7 @@ export default function CheckoutPage() {
                   className="block text-sm font-medium mb-2"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#4A3728',
+                    color: '#0F172A',
                   }}
                 >
                   {t('checkout_phone')}
@@ -154,7 +154,7 @@ export default function CheckoutPage() {
                   className="block text-sm font-medium mb-2"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#4A3728',
+                    color: '#0F172A',
                   }}
                 >
                   {t('checkout_address')}
@@ -180,42 +180,36 @@ export default function CheckoutPage() {
                   className="block text-sm font-medium mb-3"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#4A3728',
+                    color: '#0F172A',
                   }}
                 >
                   {t('checkout_payment')}
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setForm({ ...form, payment: 'cod' })}
-                    className={`payment-option rounded-2xl p-4 text-center glass-card ${
-                      form.payment === 'cod' ? 'active' : ''
-                    }`}
-                    style={{
-                      fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    }}
-                  >
-                    <Truck size={24} style={{ color: form.payment === 'cod' ? '#C9A96E' : '#8B7355', margin: '0 auto 0.5rem' }} />
-                    <p className="text-sm font-medium" style={{ color: form.payment === 'cod' ? '#4A3728' : '#8B7355' }}>
-                      {t('checkout_cod')}
-                    </p>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setForm({ ...form, payment: 'card' })}
-                    className={`payment-option rounded-2xl p-4 text-center glass-card ${
-                      form.payment === 'card' ? 'active' : ''
-                    }`}
-                    style={{
-                      fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    }}
-                  >
-                    <CreditCard size={24} style={{ color: form.payment === 'card' ? '#C9A96E' : '#8B7355', margin: '0 auto 0.5rem' }} />
-                    <p className="text-sm font-medium" style={{ color: form.payment === 'card' ? '#4A3728' : '#8B7355' }}>
-                      {t('checkout_card')}
-                    </p>
-                  </button>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {([
+                    { key: 'cod' as const, icon: Truck, label: t('checkout_cod'), brandColor: '#0369A1' },
+                    { key: 'visa' as const, icon: CreditCard, label: 'Visa', brandColor: '#1A1F71' },
+                    { key: 'mada' as const, icon: CreditCard, label: lang === 'ar' ? 'مدى' : 'Mada', brandColor: '#004B87' },
+                    { key: 'apple' as const, icon: Smartphone, label: 'Apple Pay', brandColor: '#000000' },
+                    { key: 'tabby' as const, icon: Wallet, label: 'Tabby', brandColor: '#3FFF00' },
+                  ]).map((pm) => (
+                    <button
+                      key={pm.key}
+                      type="button"
+                      onClick={() => setForm({ ...form, payment: pm.key })}
+                      className={`payment-option rounded-2xl p-4 text-center glass-card ${
+                        form.payment === pm.key ? 'active' : ''
+                      }`}
+                      style={{
+                        fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
+                      }}
+                    >
+                      <pm.icon size={22} style={{ color: form.payment === pm.key ? '#38BDF8' : '#64748B', margin: '0 auto 0.5rem' }} />
+                      <p className="text-xs font-medium" style={{ color: form.payment === pm.key ? '#0F172A' : '#64748B' }}>
+                        {pm.label}
+                      </p>
+                    </button>
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -232,7 +226,7 @@ export default function CheckoutPage() {
                   className="text-lg font-bold mb-5"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#4A3728',
+                    color: '#0F172A',
                   }}
                 >
                   {t('checkout_order_summary')}
@@ -245,39 +239,39 @@ export default function CheckoutPage() {
                         <img src={item.image} alt="" className="w-full h-full object-cover" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-xs font-medium truncate" style={{ color: '#4A3728', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>
+                        <p className="text-xs font-medium truncate" style={{ color: '#0F172A', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>
                           {lang === 'ar' ? item.nameAr : item.nameEn}
                         </p>
-                        <p className="text-[11px]" style={{ color: '#8B7355' }}>
+                        <p className="text-[11px]" style={{ color: '#64748B' }}>
                           x{item.quantity}
                         </p>
                       </div>
-                      <p className="text-sm font-semibold flex-shrink-0" style={{ color: '#7A5C42', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>
+                      <p className="text-sm font-semibold flex-shrink-0" style={{ color: '#0369A1', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>
                         {item.price * item.quantity} {t('sar')}
                       </p>
                     </div>
                   ))}
                 </div>
 
-                <div className="border-t pt-4 space-y-2" style={{ borderColor: 'rgba(160, 120, 90, 0.15)' }}>
+                <div className="border-t pt-4 space-y-2" style={{ borderColor: 'rgba(14, 165, 233, 0.15)' }}>
                   <div className="flex justify-between text-sm">
-                    <span style={{ color: '#8B7355', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{t('checkout_subtotal')}</span>
-                    <span style={{ color: '#4A3728', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{subtotal} {t('sar')}</span>
+                    <span style={{ color: '#64748B', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{t('checkout_subtotal')}</span>
+                    <span style={{ color: '#0F172A', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{subtotal} {t('sar')}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span style={{ color: '#8B7355', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{t('checkout_shipping')}</span>
+                    <span style={{ color: '#64748B', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{t('checkout_shipping')}</span>
                     <span style={{ color: '#25D366', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{t('checkout_shipping_free')}</span>
                   </div>
-                  <div className="flex justify-between text-lg font-bold pt-2 border-t" style={{ borderColor: 'rgba(160, 120, 90, 0.15)' }}>
-                    <span style={{ color: '#4A3728', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{t('checkout_total')}</span>
-                    <span style={{ color: '#7A5C42', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{subtotal} {t('sar')}</span>
+                  <div className="flex justify-between text-lg font-bold pt-2 border-t" style={{ borderColor: 'rgba(14, 165, 233, 0.15)' }}>
+                    <span style={{ color: '#0F172A', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{t('checkout_total')}</span>
+                    <span style={{ color: '#0369A1', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{subtotal} {t('sar')}</span>
                   </div>
                 </div>
 
                 {/* Security badge */}
-                <div className="flex items-center gap-2 mt-4 p-3 rounded-xl" style={{ background: 'rgba(201, 169, 110, 0.06)' }}>
-                  <ShieldCheck size={16} style={{ color: '#C9A96E' }} />
-                  <span className="text-[11px]" style={{ color: '#8B7355', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>
+                <div className="flex items-center gap-2 mt-4 p-3 rounded-xl" style={{ background: 'rgba(56, 189, 248, 0.06)' }}>
+                  <ShieldCheck size={16} style={{ color: '#38BDF8' }} />
+                  <span className="text-[11px]" style={{ color: '#64748B', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>
                     {lang === 'ar' ? 'معلوماتك محمية وآمنة' : 'Your information is secure'}
                   </span>
                 </div>
@@ -299,7 +293,7 @@ export default function CheckoutPage() {
                   className="w-full py-3 rounded-xl text-sm font-medium cursor-pointer mt-2 text-center"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#8B7355',
+                    color: '#64748B',
                   }}
                 >
                   {t('checkout_back')}

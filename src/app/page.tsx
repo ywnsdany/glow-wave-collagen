@@ -11,6 +11,7 @@ import CartPage from '@/components/glow-wave/CartPage';
 import CheckoutPage from '@/components/glow-wave/CheckoutPage';
 import AboutPage from '@/components/glow-wave/AboutPage';
 import ContactPage from '@/components/glow-wave/ContactPage';
+import ReturnsPage from '@/components/glow-wave/ReturnsPage';
 import SuccessPage from '@/components/glow-wave/SuccessPage';
 import Footer from '@/components/glow-wave/Footer';
 
@@ -65,8 +66,8 @@ export default function Home() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: '#FAF5EF' }}>
-        <div className="w-8 h-8 border-2 border-[#C9A96E] border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F8FBFF' }}>
+        <div className="w-8 h-8 border-2 border-[#38BDF8] border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -91,6 +92,8 @@ export default function Home() {
         return <AboutPage />;
       case 'contact':
         return <ContactPage />;
+      case 'returns':
+        return <ReturnsPage />;
       case 'success':
         return <SuccessPage />;
       default:
@@ -101,7 +104,7 @@ export default function Home() {
   return (
     <div
       className="min-h-screen flex flex-col"
-      style={{ background: '#FAF5EF' }}
+      style={{ background: '#F8FBFF' }}
     >
       {/* Splash Screen */}
       <AnimatePresence>

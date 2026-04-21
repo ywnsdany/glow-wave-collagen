@@ -23,10 +23,10 @@ export default function CartPage() {
             className="text-3xl md:text-4xl font-bold flex items-center gap-3"
             style={{
               fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-              color: '#4A3728',
+              color: '#0F172A',
             }}
           >
-            <ShoppingBag size={28} style={{ color: '#C9A96E' }} />
+            <ShoppingBag size={28} style={{ color: '#38BDF8' }} />
             {t('cart_title')}
           </h1>
         </motion.div>
@@ -38,14 +38,14 @@ export default function CartPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-center py-20"
           >
-            <div className="w-24 h-24 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ background: 'rgba(201, 169, 110, 0.1)' }}>
-              <ShoppingBag size={40} style={{ color: '#C9A96E', opacity: 0.5 }} />
+            <div className="w-24 h-24 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ background: 'rgba(56, 189, 248, 0.1)' }}>
+              <ShoppingBag size={40} style={{ color: '#38BDF8', opacity: 0.5 }} />
             </div>
             <p
               className="text-lg mb-6"
               style={{
                 fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                color: '#8B7355',
+                color: '#64748B',
               }}
             >
               {t('cart_empty')}
@@ -88,7 +88,7 @@ export default function CartPage() {
                         className="text-sm md:text-base font-semibold truncate"
                         style={{
                           fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                          color: '#4A3728',
+                          color: '#0F172A',
                         }}
                       >
                         {lang === 'ar' ? item.nameAr : item.nameEn}
@@ -97,7 +97,7 @@ export default function CartPage() {
                         className="text-xs mt-1"
                         style={{
                           fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                          color: '#8B7355',
+                          color: '#64748B',
                         }}
                       >
                         {item.size === 'small'
@@ -108,7 +108,7 @@ export default function CartPage() {
                         className="text-base font-bold mt-2"
                         style={{
                           fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                          color: '#7A5C42',
+                          color: '#0369A1',
                         }}
                       >
                         {item.price} {t('sar')}
@@ -120,7 +120,7 @@ export default function CartPage() {
                       <button
                         onClick={() => removeFromCart(`${item.id}-${item.size}`)}
                         className="p-2 rounded-lg cursor-pointer transition-colors duration-200 hover:bg-red-50"
-                        style={{ color: '#C44' }}
+                        style={{ color: '#EF4444' }}
                       >
                         <Trash2 size={16} />
                       </button>
@@ -135,7 +135,7 @@ export default function CartPage() {
                           className="w-8 text-center text-sm font-semibold"
                           style={{
                             fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                            color: '#4A3728',
+                            color: '#0F172A',
                           }}
                         >
                           {item.quantity}
@@ -165,7 +165,7 @@ export default function CartPage() {
                   className="text-sm font-medium"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#8B7355',
+                    color: '#64748B',
                   }}
                 >
                   {t('cart_total')}
@@ -174,10 +174,10 @@ export default function CartPage() {
                   className="text-2xl md:text-3xl font-bold"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#4A3728',
+                    color: '#0F172A',
                   }}
                 >
-                  {total} <span className="text-base font-normal" style={{ color: '#8B7355' }}>{t('sar')}</span>
+                  {total} <span className="text-base font-normal" style={{ color: '#64748B' }}>{t('sar')}</span>
                 </span>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">

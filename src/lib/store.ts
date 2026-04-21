@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { Lang, translations, TranslationKey } from './i18n';
 
-export type PageType = 'home' | 'product' | 'cart' | 'checkout' | 'about' | 'contact' | 'success';
+export type PageType = 'home' | 'product' | 'cart' | 'checkout' | 'about' | 'contact' | 'returns' | 'success';
 
 export type CartItem = {
   id: string;

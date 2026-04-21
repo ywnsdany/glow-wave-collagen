@@ -44,12 +44,12 @@ export default function HomePage() {
               className={`${isRTL ? 'md:order-2' : ''}`}
             >
               <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
-                <Sparkles size={14} style={{ color: '#C9A96E' }} />
+                <Sparkles size={14} style={{ color: '#38BDF8' }} />
                 <span
                   className="text-xs font-medium tracking-wider uppercase"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#A0785A',
+                    color: '#0EA5E9',
                   }}
                 >
                   {t('hero_badge')}
@@ -61,7 +61,7 @@ export default function HomePage() {
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6"
                 style={{
                   fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                  color: '#4A3728',
+                  color: '#0F172A',
                 }}
               >
                 {t('hero_title')}
@@ -72,7 +72,7 @@ export default function HomePage() {
                 className="text-base md:text-lg leading-relaxed mb-8 max-w-lg"
                 style={{
                   fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                  color: '#8B7355',
+                  color: '#64748B',
                 }}
               >
                 {t('hero_subtitle')}
@@ -129,12 +129,12 @@ export default function HomePage() {
                   className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 glass-strong rounded-2xl px-4 py-3 shadow-lg"
                 >
                   <div className="flex items-center gap-2">
-                    <Leaf size={16} style={{ color: '#C9A96E' }} />
+                    <Leaf size={16} style={{ color: '#38BDF8' }} />
                     <span
                       className="text-xs font-semibold"
                       style={{
                         fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                        color: '#7A5C42',
+                        color: '#0369A1',
                       }}
                     >
                       100% {lang === 'ar' ? 'مستدام' : 'Sustainable'}
@@ -164,7 +164,7 @@ export default function HomePage() {
               className="inline-block text-xs font-medium tracking-wider uppercase mb-3 px-4 py-2 rounded-full glass-card"
               style={{
                 fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                color: '#A0785A',
+                color: '#0EA5E9',
               }}
             >
               {t('story_tag')}
@@ -173,7 +173,7 @@ export default function HomePage() {
               className="text-3xl md:text-4xl lg:text-5xl font-bold"
               style={{
                 fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                color: '#4A3728',
+                color: '#0F172A',
               }}
             >
               {t('story_title')}
@@ -210,7 +210,7 @@ export default function HomePage() {
                 className="text-base md:text-lg leading-relaxed"
                 style={{
                   fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                  color: '#6B5B4E',
+                  color: '#475569',
                 }}
               >
                 {t('story_p1')}
@@ -219,7 +219,7 @@ export default function HomePage() {
                 className="text-base md:text-lg leading-relaxed"
                 style={{
                   fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                  color: '#6B5B4E',
+                  color: '#475569',
                 }}
               >
                 {t('story_p2')}
@@ -244,12 +244,12 @@ export default function HomePage() {
                 key={i}
                 className="glass-card rounded-2xl p-8 text-center benefit-card"
               >
-                <stat.icon size={28} style={{ color: '#C9A96E', margin: '0 auto 1rem' }} />
+                <stat.icon size={28} style={{ color: '#38BDF8', margin: '0 auto 1rem' }} />
                 <h3
                   className="text-3xl md:text-4xl font-bold mb-2"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#7A5C42',
+                    color: '#0369A1',
                   }}
                 >
                   {stat.num}
@@ -258,7 +258,7 @@ export default function HomePage() {
                   className="text-sm"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#8B7355',
+                    color: '#64748B',
                   }}
                 >
                   {stat.label}
@@ -285,7 +285,7 @@ export default function HomePage() {
               className="inline-block text-xs font-medium tracking-wider uppercase mb-3 px-4 py-2 rounded-full glass-card"
               style={{
                 fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                color: '#A0785A',
+                color: '#0EA5E9',
               }}
             >
               {t('prod_tag')}
@@ -294,7 +294,7 @@ export default function HomePage() {
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
               style={{
                 fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                color: '#4A3728',
+                color: '#0F172A',
               }}
             >
               {t('prod_title')}
@@ -321,7 +321,7 @@ export default function HomePage() {
                   className="text-xl md:text-2xl font-bold mb-4"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#4A3728',
+                    color: '#0F172A',
                   }}
                 >
                   {t('prod_desc_title')}
@@ -330,7 +330,7 @@ export default function HomePage() {
                   className="text-sm leading-relaxed mb-6"
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: '#8B7355',
+                    color: '#64748B',
                   }}
                 >
                   {t('prod_desc')}
@@ -344,10 +344,10 @@ export default function HomePage() {
                     { icon: Sparkles, title: t('prod_benefit3'), desc: t('prod_benefit3_desc') },
                     { icon: Leaf, title: t('prod_benefit4'), desc: t('prod_benefit4_desc') },
                   ].map((b, i) => (
-                    <div key={i} className="p-3 rounded-xl" style={{ background: 'rgba(201, 169, 110, 0.06)' }}>
-                      <b.icon size={18} style={{ color: '#C9A96E' }} />
-                      <p className="text-xs font-semibold mt-1" style={{ color: '#7A5C42', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{b.title}</p>
-                      <p className="text-[11px]" style={{ color: '#8B7355', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{b.desc}</p>
+                    <div key={i} className="p-3 rounded-xl" style={{ background: 'rgba(56, 189, 248, 0.06)' }}>
+                      <b.icon size={18} style={{ color: '#38BDF8' }} />
+                      <p className="text-xs font-semibold mt-1" style={{ color: '#0369A1', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{b.title}</p>
+                      <p className="text-[11px]" style={{ color: '#64748B', fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)' }}>{b.desc}</p>
                     </div>
                   ))}
                 </div>

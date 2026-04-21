@@ -17,6 +17,7 @@ export default function Navbar() {
     { key: 'product' as const, label: t('nav_product') },
     { key: 'about' as const, label: t('nav_about') },
     { key: 'contact' as const, label: t('nav_contact') },
+    { key: 'returns' as const, label: t('footer_returns') },
   ];
 
   return (
@@ -43,7 +44,7 @@ export default function Navbar() {
                 className="text-lg md:text-xl font-bold tracking-wide"
                 style={{
                   fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                  color: '#7A5C42',
+                  color: '#0369A1',
                 }}
               >
                 Glow Wave
@@ -59,7 +60,7 @@ export default function Navbar() {
                   className={`nav-link text-sm font-medium cursor-pointer ${page === item.key ? 'active' : ''}`}
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: page === item.key ? '#7A5C42' : '#8B7355',
+                    color: page === item.key ? '#0369A1' : '#64748B',
                     fontWeight: page === item.key ? 600 : 400,
                   }}
                 >
@@ -76,7 +77,7 @@ export default function Navbar() {
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl glass-card text-xs font-medium cursor-pointer transition-all duration-300 hover:shadow-md"
                 style={{
                   fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                  color: '#7A5C42',
+                  color: '#0369A1',
                 }}
               >
                 <Globe size={14} />
@@ -89,7 +90,7 @@ export default function Navbar() {
                 className="relative flex items-center gap-2 px-3 py-2 rounded-xl glass-card text-xs font-medium cursor-pointer transition-all duration-300 hover:shadow-md"
                 style={{
                   fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                  color: '#7A5C42',
+                  color: '#0369A1',
                 }}
               >
                 <ShoppingBag size={14} />
@@ -100,7 +101,7 @@ export default function Navbar() {
                     animate={{ scale: 1 }}
                     className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white"
                     style={{
-                      background: 'linear-gradient(135deg, #C9A96E, #A0785A)',
+                      background: 'linear-gradient(135deg, #38BDF8, #0EA5E9)',
                     }}
                   >
                     {cartCount}
@@ -112,7 +113,7 @@ export default function Navbar() {
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="md:hidden p-2 rounded-xl cursor-pointer"
-                style={{ color: '#7A5C42' }}
+                style={{ color: '#0369A1' }}
               >
                 {mobileOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
@@ -141,12 +142,12 @@ export default function Navbar() {
                   }}
                   className={`text-left px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer ${
                     page === item.key
-                      ? 'bg-gradient-to-r from-[#C9A96E]/10 to-transparent'
+                      ? 'bg-gradient-to-r from-[#38BDF8]/10 to-transparent'
                       : 'hover:bg-white/30'
                   }`}
                   style={{
                     fontFamily: lang === 'ar' ? 'var(--font-tajawal)' : 'var(--font-poppins)',
-                    color: page === item.key ? '#7A5C42' : '#8B7355',
+                    color: page === item.key ? '#0369A1' : '#64748B',
                     fontWeight: page === item.key ? 600 : 400,
                     textAlign: isRTL ? 'right' : 'left',
                   }}

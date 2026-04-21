@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body
         className={`${poppins.variable} ${tajawal.variable} antialiased`}
-        style={{ background: '#FAF5EF' }}
+        style={{ background: '#F8FBFF' }}
       >
         {children}
         <Toaster />
