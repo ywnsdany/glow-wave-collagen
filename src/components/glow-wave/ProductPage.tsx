@@ -37,7 +37,7 @@ export default function ProductPage() {
   };
 
   return (
-    <div className="min-h-screen pt-24 md:pt-28 pb-20">
+    <div className="min-h-screen pt-28 md:pt-36 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

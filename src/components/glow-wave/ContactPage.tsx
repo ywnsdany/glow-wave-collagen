@@ -72,7 +72,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen pt-24 md:pt-28 pb-20">
+    <div className="min-h-screen pt-28 md:pt-36 pb-20">
       {/* Hero */}
       <section className="relative py-16 md:py-24 hero-gradient overflow-hidden">
         <div className="hero-gradient-overlay absolute inset-0" />

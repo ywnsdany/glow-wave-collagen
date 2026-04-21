@@ -40,7 +40,7 @@ export default function CheckoutPage() {
 
   if (cart.length === 0) {
     return (
-      <div className="min-h-screen pt-24 md:pt-28 pb-20 flex items-center justify-center">
+      <div className="min-h-screen pt-28 md:pt-36 pb-20 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="min-h-screen pt-24 md:pt-28 pb-20">
+    <div className="min-h-screen pt-28 md:pt-36 pb-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
